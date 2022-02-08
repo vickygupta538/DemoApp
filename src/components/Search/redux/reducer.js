@@ -1,47 +1,46 @@
-import { createAction } from "redux-actions";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import get from '../../../API';
 
-const pageLevelErrorOccured = createAction('PAGE_LEVEL_ERROR_OCCURED');
-const searchCharacterRequested = createAction('SEARCH_CHARACTER_REQUESTED');
-const searchCharacterFulfilled = createAction('SEARCH_CHARACTER_FULFILLED');
-
-const searchCharacter = 'https://swapi.dev/api/people/?search=';
-
-export const searchCharacters = (payload) => {
-    return async (dispatch, getState, get) => {
-      try{
-        dispatch(searchCharacterRequested());
-        const response = await get(searchCharacter, payload);
-        return dispatch(searchCharacterFulfilled(response.data.results));
-        // return response;
-      } catch(error){
-        dispatch(pageLevelErrorOccured(error));
-      }
-        
-    }
-}
+const url = 'https://swapi.dev/api/people/?search=';
+// First, create the thunk
+export const searchCharacter = createAsyncThunk('users/fetchByIdStatus', async (payload) => {
+  const response = await get(url, payload);
+  return response.data.results;
+});
 
 const initialState = {
-  data : [],
-  isRequesting : false,
-  error : null,
-  requested: false
-}
-const characters = (state = initialState,  action) => {
-  switch (action.type) {
-    case 'SEARCH_CHARACTER_REQUESTED':
-      return {
-        ...state,
-        isRequesting : true
-      };
-    case 'SEARCH_CHARACTER_FULFILLED':
-      return {
-          ...initialState,
-          data: action.payload,
-          requested : true
-        }
-    default:
-      return state;
-  }
+  data: [],
+  isRequesting: false,
+  error: null,
+  requested: false,
 };
 
-export default characters;
+// Then, handle actions in your reducers:
+const searchCharacters = createSlice({
+  name: 'search',
+  initialState: initialState,
+  reducers: {
+    // standard reducer logic, with auto-generated action types per reducer
+  },
+  extraReducers: (builder) => {
+    // Add reducers for additional action types here, and handle loading state as needed
+    builder
+      .addCase(searchCharacter.pending, (state, action) => {
+        // Add user to the state array
+        state.isRequesting = true;
+      })
+      .addCase(searchCharacter.fulfilled, (state, action) => {
+        // Add user to the state array
+        state.data = action.payload;
+        state.isRequesting = false;
+      })
+      .addCase(searchCharacter.rejected, (state, action) => {
+        // Add user to the state array
+        state.error = action.payload;
+        state.isRequesting = false;
+      });
+  },
+});
+
+// Later, dispatch the thunk as needed in the app
+export default searchCharacters.reducer;

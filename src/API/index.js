@@ -1,6 +1,8 @@
-import axios from "axios";
+import axios from 'axios';
 
-export function get(url, data) {
+const get = (url, data) => {
   const endpoint = url + data;
   return axios.get(endpoint);
-}
+};
+
+export default get;

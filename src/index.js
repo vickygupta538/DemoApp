@@ -5,7 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './store/configureStore';
-// const store = configureStore();
+// 1const store = configureStore();
+import './utils/track';
 
 ReactDOM.render(
   <React.StrictMode>

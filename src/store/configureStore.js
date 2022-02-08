@@ -1,6 +1,6 @@
 import { applyMiddleware, createStore, compose } from 'redux';
 import rootReducer from '../reducers';
-import { get } from '../API';
+// import { get } from '../API';
 import thunk from 'redux-thunk';
 import { configureStore } from '@reduxjs/toolkit';
 
@@ -17,7 +17,7 @@ import { configureStore } from '@reduxjs/toolkit';
 //const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 // Middleware you want to use in production:
-const enhancer = compose(applyMiddleware(thunk.withExtraArgument(get)));
+// const enhancer = compose(applyMiddleware(thunk.withExtraArgument(get)));
 
 // export function configureStore(initialState) {
 //   // Note: only Redux >= 3.1.0 supports passing enhancer as third argument.
@@ -32,7 +32,7 @@ const store = configureStore({
   reducer: rootReducer,
   // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
   devTools: process.env.NODE_ENV !== 'production',
-  enhancers: [enhancer],
+  enhancers: [],
 });
 
 export default store;

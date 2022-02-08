@@ -66,13 +66,22 @@ const Description = (props) => {
         >
           Order Online
         </NavLink>
-        <NavLink to="/reviews" activeClassName="selected">
+        <NavLink
+          to="/reviews"
+          className={({ isActive }) => (isActive ? styles.selected : styles.unselected)}
+        >
           Reviews
         </NavLink>
-        <NavLink to="/photos" activeClassName="selected">
+        <NavLink
+          to="/photos"
+          className={({ isActive }) => (isActive ? styles.selected : styles.unselected)}
+        >
           Photos
         </NavLink>
-        <NavLink to="/menu" activeClassName="selected">
+        <NavLink
+          to="/menu"
+          className={({ isActive }) => (isActive ? styles.selected : styles.unselected)}
+        >
           Menu
         </NavLink>
       </nav>

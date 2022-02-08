@@ -13,6 +13,9 @@ const Product = (props) => {
   const gotoDetailPage = () => {
     // const arr = url.split('/');
     // arr.pop();
+    setTimeout(() => {
+      console.log(url());
+    }, 1000);
     navigate('/detail/order-online');
   };
 
