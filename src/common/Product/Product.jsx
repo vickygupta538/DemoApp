@@ -1,22 +1,20 @@
-import React from "react";
-import styles from './Product.module.scss'; 
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
-import {useNavigate} from 'react-router-dom';
+import React from 'react';
+import styles from './Product.module.scss';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
+import { useNavigate } from 'react-router-dom';
 
 //https://b.zmtcdn.com/data/dish_photos/752/c5e0d7b988590b6cc3c0009ec22c0752.jpg?output-format=webp
 
+const Product = (props) => {
+  const { hair_color, skin_color, eye_color, birth_year, gender, name, url } = props;
 
-const Product = props => {
- 
-    const { hair_color, skin_color, eye_color, birth_year, gender, name, url } = props;
-
-    const navigate = useNavigate();
-    const gotoDetailPage = () => {
-      const arr = url.split('/');
-      arr.pop();
-      navigate(`/detail/${arr[arr.length-1]}`)
-    }
+  const navigate = useNavigate();
+  const gotoDetailPage = () => {
+    // const arr = url.split('/');
+    // arr.pop();
+    navigate('/detail/order-online');
+  };
 
   return (
     // <section className={styles.container} data-test="SearchResultDetailViewComponent">
@@ -34,8 +32,17 @@ const Product = props => {
     //   {name && <button onClick={gotoDetailPage}>Click for More info</button>}
     // </section>
 
-    <section className={styles.container} data-test="SearchResultDetailViewComponent">
-      <img className={styles.product} src="https://b.zmtcdn.com/data/dish_photos/752/c5e0d7b988590b6cc3c0009ec22c0752.jpg?output-format=webp" loading="lazy"/>
+    <section
+      className={styles.container}
+      data-test="SearchResultDetailViewComponent"
+      onClick={gotoDetailPage}
+    >
+      <img
+        className={styles.product}
+        src="https://b.zmtcdn.com/data/dish_photos/752/c5e0d7b988590b6cc3c0009ec22c0752.jpg?output-format=webp"
+        loading="lazy"
+        alt=""
+      />
       <div className={styles.firstDiv}>
         <div>Dominos Pizza</div>
         <div className={styles.secondChild}>4*</div>
@@ -46,11 +53,14 @@ const Product = props => {
       </div>
       <hr />
       <div>
-        <img className={styles.bottomImage} src="https://b.zmtcdn.com/data/o2_assets/0b07ef18234c6fdf9365ad1c274ae0631612687510.png?output-format=webp" />
+        <img
+          className={styles.bottomImage}
+          src="https://b.zmtcdn.com/data/o2_assets/0b07ef18234c6fdf9365ad1c274ae0631612687510.png?output-format=webp"
+          alt=""
+        />
         <div>Follows all Max Safety measures to ensure your food is safe</div>
       </div>
     </section>
-    
   );
 };
 
