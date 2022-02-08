@@ -3,11 +3,11 @@ import Header from './common/Header/Header';
 import Search from './components/Search/Search';
 import Detail from './components/Detail/Detail';
 import Cart from './components/Cart/Cart';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, HashRouter } from 'react-router-dom';
 
 function App() {
   return (
-    <Router>
+    <HashRouter>
       <Header />
       <Routes>
         <Route exact path="/" element={<Catalog />} />
@@ -15,7 +15,7 @@ function App() {
         <Route exact path="/detail/*" element={<Detail />} />
         <Route exact path="/cart" element={<Cart />} />
       </Routes>
-    </Router>
+    </HashRouter>
   );
 }
 
