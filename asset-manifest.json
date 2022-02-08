@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/DemoApp/static/css/main.245ad2c3.css",
-    "main.js": "/DemoApp/static/js/main.eba6e60b.js",
+    "main.js": "/DemoApp/static/js/main.72a88cdd.js",
     "static/js/787.a3103ff7.chunk.js": "/DemoApp/static/js/787.a3103ff7.chunk.js",
     "static/media/first.webp": "/DemoApp/static/media/first.760a4013b2fec52d4a47.webp",
     "static/media/amazon_logo.svg": "/DemoApp/static/media/amazon_logo.15158e17b93f3110dba7bc94d5c5c29f.svg",
@@ -11,11 +11,11 @@
     "static/media/ItemCard.webp": "/DemoApp/static/media/ItemCard.e1ac746a000b9f3507fc.webp",
     "index.html": "/DemoApp/index.html",
     "main.245ad2c3.css.map": "/DemoApp/static/css/main.245ad2c3.css.map",
-    "main.eba6e60b.js.map": "/DemoApp/static/js/main.eba6e60b.js.map",
+    "main.72a88cdd.js.map": "/DemoApp/static/js/main.72a88cdd.js.map",
     "787.a3103ff7.chunk.js.map": "/DemoApp/static/js/787.a3103ff7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.245ad2c3.css",
-    "static/js/main.eba6e60b.js"
+    "static/js/main.72a88cdd.js"
   ]
 }
