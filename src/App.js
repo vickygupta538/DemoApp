@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import Catalog from './components/Catalog/Catalog';
+import Header from './common/Header/Header';
+import Search from './components/Search/Search';
+import Detail from './components/Detail/Detail';
+import Cart from './components/Cart/Cart';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route exact path="/" element={<Catalog />} />
+        <Route exact path="/search/:searchTerm" element={<Search />} />
+        <Route exact path="/detail/*" element={<Detail />} />
+        <Route exact path="/cart" element={<Cart />} />
+      </Routes>
+    </Router>
   );
 }
 

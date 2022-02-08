@@ -1,0 +1,55 @@
+.container{
+    display: flex;
+    height: 27rem;
+    width: 100%;
+    gap: 0.5rem;
+    overflow: hidden;
+    margin-bottom : 1rem;
+    
+
+    img {
+        height: 100%;
+        width: 100%;
+        transition: transform 1s;
+
+        &:hover{
+            transform: scale(1.05);
+            // transition: all 1s;
+        }
+    }
+
+    
+}
+
+.left{
+    flex-basis: 62.5%;
+}
+.right {
+    flex-basis: 37.5%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    // border: 1px solid blue;
+}
+
+.leftTop{
+    height: 50%;
+    width: 100%;
+    gap: 0.5rem;
+    display: flex;
+    /* margin-bottom: 0.5rem; */
+    img {
+        height: 100%;
+        width: 50%;
+    }
+}
+.leftBottom {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+    img {
+        height: 100%;
+        width: 50%;
+    }
+}

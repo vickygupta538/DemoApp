@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:first-child {
+    margin-top: 1rem;
+  }
+
+  .left,
+  img {
+    height: 100px;
+    width: 100px;
+  }
+  .right {
+    flex: 1;
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+
+      .star {
+        fill: rgb(243, 193, 23);
+      }
+
+      .price {
+        display: flex;
+        align-content: center;
+
+        .rupeeIcon {
+          height: 20px;
+          width: 15px;
+        }
+      }
+    }
+
+    .addOption {
+      button {
+        display: flex;
+        align-items: center;
+        border: 1px solid red;
+        background: red;
+        border-radius: 10%;
+        color: white;
+        font-weight: 700;
+        padding: 0.0625rem 0.625rem;
+        cursor: pointer;
+      }
+    }
+  }
+}

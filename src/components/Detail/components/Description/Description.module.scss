@@ -1,0 +1,72 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  .title {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .ratingContainer {
+    display: flex;
+    gap: 1rem;
+
+    .rating {
+      display: flex;
+      align-items: center;
+
+      .ratingValue {
+        background: lightgreen;
+        padding: 10px;
+        border-radius: 1rem;
+        margin-right: 0.625rem;
+      }
+    }
+  }
+}
+
+.m-b-1 {
+  margin-bottom: 1rem;
+}
+
+.buttonActions {
+  gap: 1rem;
+  display: flex;
+  margin-bottom: 1rem;
+
+  button {
+    background: transparent;
+    border: 1px solid lightgrey;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    padding: 0.625rem;
+
+    .starIcon {
+      color: red;
+      height: 20px;
+    }
+  }
+}
+
+.navigation {
+  display: flex;
+  gap: 1rem;
+
+  border-bottom: 1px solid lightgrey;
+  a {
+    text-decoration: none;
+    padding: 2rem;
+    color: black;
+  }
+  .selected {
+    color: red;
+    border-bottom: 1px solid red;
+  }
+
+  .unselected {
+    color: black;
+    border-bottom: 0;
+  }
+}
