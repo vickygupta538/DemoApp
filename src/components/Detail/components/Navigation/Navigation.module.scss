@@ -1,0 +1,22 @@
+.navigation {
+  display: flex;
+  gap: 1rem;
+  position: sticky;
+  top: 202px;
+  background-color: white;
+
+  border-bottom: 1px solid lightgrey;
+  a {
+    text-decoration: none;
+    padding: 2rem;
+    color: black;
+  }
+  .selected {
+    color: red;
+    border-bottom: 1px solid red;
+  }
+  .unselected {
+    color: black;
+    border-bottom: 0;
+  }
+}

@@ -10,6 +10,7 @@ const Header = (props) => {
   let navigate = useNavigate();
 
   const onSearch = (event) => {
+    event.preventDefault();
     navigate(`/search/${searchTerm}`);
   };
   return (
@@ -18,7 +19,7 @@ const Header = (props) => {
         <img src={logo} alt="amazon logo" />
         <div className={styles.headingContent}>
           <div style={{ flex: 1 }}>Star Wars Character Search</div>
-          <section className={styles.searchContainer}>
+          <form className={styles.searchContainer} onSubmit={onSearch}>
             <input
               type="text"
               name="searchTerm"
@@ -26,7 +27,7 @@ const Header = (props) => {
               onChange={({ target }) => setSearchTerm(target.value)}
             />
             <SearchIcon onClick={onSearch} />
-          </section>
+          </form>
           <CartOverview />
         </div>
       </div>

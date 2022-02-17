@@ -10,7 +10,7 @@ import { v4 } from 'uuid';
 import ImageRender from '../../../../../../common/ImageRender/ImageRender';
 
 const ItemCard = forwardRef((props, ref) => {
-  const { url, height, width } = props;
+  const { url, height, width, fn } = props;
   const dispatch = useDispatch();
   const addItem = () => {
     dispatch(
